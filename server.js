@@ -12,6 +12,8 @@ server.listen(PORT, host, () =>
 
 // INSTRUCTING THE SERVER ON HOW TO LISTEN:
 function requestHandler(request, response) {
+  console.log(request);
+  console.log(response);
   // Allowing code to be requested from any origin to access the resource:
   response.setHeader("Access-Control-Allow-Origin", "*");
   // Telling the colient that its request was accepted:
