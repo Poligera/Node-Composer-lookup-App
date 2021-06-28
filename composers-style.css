@@ -1,0 +1,105 @@
+/* COMPOSER CARD STYLING */
+
+header nav a {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px blue solid;
+    border-radius: 5px;
+  }
+
+  main {
+    text-align: center;
+    margin-top: 2rem;
+    border: 3px blue solid;
+    border-radius: 15px;
+    padding: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  img {
+      max-width: 200px;
+      height: auto;
+    margin-bottom: 1rem;
+  }
+
+  table tr {
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+
+  table td {
+    text-align: left;
+  }
+
+  .info {
+    text-align: center;
+    width: 25rem;
+    padding-left: 3rem;
+  }
+
+  /* @media (max-width: 500px) {
+
+    header nav a {
+      margin-top: 0.1rem;
+      padding: 0.1rem 0.3rem;
+      font-size: small;
+    }
+
+    main {
+      margin: 0.2rem 0.5rem;
+      padding: 0.3rem;
+    }
+
+    h1 {
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+
+    img {
+      width: 40%;
+      height: auto;
+    }
+
+    table tr {
+      height: 2rem;
+      font-size: 0.5rem;
+    }
+
+    table td {
+      text-align: left;
+      font-size: 0.5rem;
+    }
+
+    h2 {
+        font-size: 0.5rem;
+    }
+
+    .info {
+      text-align: justify;
+      font-size: 0.2rem;
+    }
+  }
+
+  @media (max-height: 500px) {
+    header nav a {
+      margin-top: 0.2rem;
+      padding: 0.1rem 0.3rem;
+      font-size: small;
+    }
+
+    main {
+      margin: 0.3rem;
+      padding: 0.3rem;
+    }
+
+    h1 {
+      margin-bottom: 0.2rem;
+    }
+    main {
+      overflow: scroll;
+    }
+  }
