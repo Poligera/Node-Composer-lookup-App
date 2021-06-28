@@ -1,4 +1,5 @@
 const http = require("http"); // accessing Node's built-in "http" module
+const fs = require("fs"); // accessing built-in File System module
 const server = http.createServer(requestHandler); // Request handler function is passed as an argument!;
 const PORT = process.env.PORT || 3000;
 const host = "localhost";
@@ -15,6 +16,7 @@ function requestHandler(request, response) {
   response.setHeader("Access-Control-Allow-Origin", "*");
   // Telling the colient that its request was accepted:
   response.statusCode = 200;
+  fs.createReadStream("index.html").pipe(response); 
 
   // Exctracing input name from url and making it lower-case:
   let extractedName = request.url.split("=")[1].toLowerCase();
