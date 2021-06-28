@@ -2,7 +2,7 @@ const http = require("http"); // accessing Node's built-in "http" module
 const fs = require("fs"); // accessing built-in File System module
 const server = http.createServer(requestHandler); // Request handler function is passed as an argument!;
 const PORT = process.env.PORT || 3000;
-const host = "localhost";
+const host = "0.0.0.0";
 const composers = require("./composerData"); // Bringing in database of composers (array of objects)
 
 // STARTING THE SERVER:
