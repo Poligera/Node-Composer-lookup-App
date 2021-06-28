@@ -16,18 +16,20 @@ function requestHandler(request, response) {
   response.setHeader("Access-Control-Allow-Origin", "*");
   // Telling the colient that its request was accepted:
   response.statusCode = 200;
-  fs.createReadStream("index.html").pipe(response); 
-
-  // Exctracing input name from url and making it lower-case:
-  let extractedName = request.url.split("=")[1].toLowerCase();
-
-  // Capitalising the name so it matches our database later:
-  let nameCapitalised = extractedName[0].toUpperCase() + extractedName.slice(1);
-
-  // Matching input name to our composer object:
-  const body = composers.filter(
-    (composer) => composer.name === nameCapitalised
-  );
+    let url = request.url;
+  if (url === "/") {
+    fs.createReadStream("./index.html").pipe(response);
+  } else {
+    // Exctracing input name from url and making it lower-case:
+    let extractedName = url.split("=")[1].toLowerCase();
+    // Capitalising the name so it matches our database later:
+    let nameCapitalised =
+      extractedName[0].toUpperCase() + extractedName.slice(1);
+    // Matching input name to our composer object:
+    const body = composers.filter(
+      (composer) => composer.name === nameCapitalised
+    )[0];
+  }
   // Sending composer object back to the client:
   response.end(JSON.stringify(body));
 }
