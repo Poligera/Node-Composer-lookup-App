@@ -7,7 +7,7 @@ let url;
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   composerName = e.target.name.value;
-  url = `http://localhost:5000/?name=${composerName}`;
+  url = `http://localhost:3000/?name=${composerName}`;
   fetchData();
 });
 
