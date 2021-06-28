@@ -16,7 +16,8 @@ function requestHandler(request, response) {
   response.setHeader("Access-Control-Allow-Origin", "*");
   // Telling the colient that its request was accepted:
   response.statusCode = 200;
-    let url = request.url;
+  let url = request.url;
+  let body;
   if (url === "/") {
     fs.createReadStream("./index.html").pipe(response);
   } else {
@@ -26,7 +27,7 @@ function requestHandler(request, response) {
     let nameCapitalised =
       extractedName[0].toUpperCase() + extractedName.slice(1);
     // Matching input name to our composer object:
-    const body = composers.filter(
+    body = composers.filter(
       (composer) => composer.name === nameCapitalised
     )[0];
   }
