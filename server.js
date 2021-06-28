@@ -5,7 +5,7 @@ const host = "localhost";
 const composers = require("./composerData"); // Bringing in database of composers (array of objects)
 
 // STARTING THE SERVER:
-server.listen(port, host, () =>
+server.listen(PORT, host, () =>
   console.log(`Server listening on ${host}:${PORT}`)
 );
 
