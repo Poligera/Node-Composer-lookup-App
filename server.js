@@ -1,12 +1,12 @@
 const http = require("http"); // accessing Node's built-in "http" module
 const server = http.createServer(requestHandler); // Request handler function is passed as an argument!;
-const port = 5000;
+const PORT = process.env.PORT || 3000;
 const host = "localhost";
 const composers = require("./composerData"); // Bringing in database of composers (array of objects)
 
 // STARTING THE SERVER:
 server.listen(port, host, () =>
-  console.log(`Server listening on ${host}:${port}`)
+  console.log(`Server listening on ${host}:${PORT}`)
 );
 
 // INSTRUCTING THE SERVER ON HOW TO LISTEN:
